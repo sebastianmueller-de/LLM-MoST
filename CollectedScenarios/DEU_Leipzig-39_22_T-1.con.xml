@@ -1,0 +1,59 @@
+
+<!-- generated on 2025-09-08 13:24:09.886596 by CommonRoad Scenario Designer UNKNOWN
+-->
+
+<connections>
+  <connection from="714" to="229" fromLane="0" toLane="0" via="2449_0" tl="50" linkIndex="3" shape="-425.3053,419.15975000000003 -433.4305,414.49875 -441.6038,409.80485" keepClear="false" contPos="-4.0"/>
+  <connection from="454" to="229" fromLane="0" toLane="1" via="2259_0" shape="-431.0041,406.91025 -431.16790000000003,407.47785 -431.43015,407.99744999999996 -431.80015000000003,408.4462 -432.2865,408.7643 -432.8356,408.95630000000006 -433.99620000000004,409.01955 -435.70725,408.6619 -437.8752,407.7989 -439.84235,406.78499999999997" keepClear="false" contPos="-4.0"/>
+  <connection from="2613" to="714" fromLane="1" toLane="1" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="455" to="448" fromLane="0" toLane="0" via="2262_0" shape="-434.33389999999997,405.77265 -434.19,404.4539 -434.3843,401.9611 -434.56989999999996,399.15455 -434.37225,397.28555" keepClear="false" contPos="-4.0"/>
+  <connection from="2582" to="735" fromLane="0" toLane="0" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="1366" to="178" fromLane="1" toLane="1" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="1114" to="2728" fromLane="0" toLane="0" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="446" to="1114" fromLane="0" toLane="0" via="2253_0" tl="49" linkIndex="1" shape="-427.51284999999996,398.65055 -427.68534999999997,399.92060000000004 -427.62265,401.1586 -427.46035,401.7572 -427.18904999999995,402.31435 -426.8065,402.8021 -426.32835,403.19815 -425.19545,403.70309999999995 -424.5153,403.85315" keepClear="false" contPos="-4.0"/>
+  <connection from="1331" to="2868" fromLane="0" toLane="0" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="731" to="229" fromLane="1" toLane="1" via="2464_1" tl="50" linkIndex="2" shape="-436.20945,420.41785000000004 -435.6462,417.80455 -435.40785,415.15425 -435.5295,413.1627 -435.99905,411.22465 -436.5482,410.01315 -437.28835000000004,408.9085 -438.20635000000004,407.94624999999996 -439.84235,406.78499999999997" keepClear="false" contPos="-4.0"/>
+  <connection from="2169" to="1032" fromLane="0" toLane="0" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="2581" to="735" fromLane="0" toLane="1" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="2668" to="330" fromLane="0" toLane="0" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="330" to="2170" fromLane="0" toLane="0" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="1363" to="84" fromLane="0" toLane="0" via="2897_0" tl="30" linkIndex="0" shape="-457.08984999999996,394.2096 -455.7513,394.91225 -454.2084,396.18905 -451.9922,398.2197 -450.7156,399.0072 -449.7665,399.32355 -449.27635,399.4001" keepClear="false" contPos="-4.0"/>
+  <connection from="2728" to="1331" fromLane="0" toLane="0" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="2454" to="951" fromLane="0" toLane="0" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="229" to="232" fromLane="0" toLane="0" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="87" to="448" fromLane="0" toLane="0" via="1958_0" tl="49" linkIndex="3" shape="-439.56845,400.22455 -437.725,400.1999 -436.55525,399.914 -436.0118,399.6535 -435.52085,399.30435 -435.10249999999996,398.8707 -434.7704,398.3671 -434.37225,397.28555" keepClear="false" contPos="-4.0"/>
+  <connection from="2613" to="714" fromLane="0" toLane="0" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="951" to="2613" fromLane="1" toLane="1" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="735" to="731" fromLane="0" toLane="0" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="735" to="731" fromLane="1" toLane="1" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="2452" to="329" fromLane="0" toLane="0" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="1033" to="2668" fromLane="0" toLane="0" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="2454" to="951" fromLane="1" toLane="1" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="454" to="729" fromLane="0" toLane="0" via="2260_0" shape="-431.0041,406.91025 -431.5327,410.50975 -432.14175,417.74649999999997 -432.6977,420.80765 -432.82885,421.3183" keepClear="false" contPos="-4.0"/>
+  <connection from="2451" to="720" fromLane="0" toLane="0" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="905" to="2581" fromLane="0" toLane="0" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="731" to="455" fromLane="1" toLane="0" via="2463_0" tl="50" linkIndex="1" shape="-436.20945,420.41785000000004 -436.09839999999997,419.98760000000004 -435.57175,417.09335 -434.9796,409.9374 -434.43685,406.26945" keepClear="false" contPos="-4.0"/>
+  <connection from="951" to="2613" fromLane="0" toLane="0" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="1366" to="2900" fromLane="0" toLane="0" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="2451" to="720" fromLane="1" toLane="1" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="1363" to="84" fromLane="1" toLane="1" via="2897_1" tl="30" linkIndex="1" shape="-458.39035,397.4553 -457.38545,397.94219999999996 -455.8119,399.19505000000004 -453.1884,401.45195 -451.48575,402.40895 -450.21765,402.7941 -449.656,402.87835" keepClear="false" contPos="-4.0"/>
+  <connection from="2900" to="178" fromLane="0" toLane="0" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="905" to="2582" fromLane="0" toLane="0" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="84" to="87" fromLane="1" toLane="1" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="329" to="2169" fromLane="0" toLane="0" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="229" to="232" fromLane="1" toLane="1" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="232" to="1366" fromLane="1" toLane="1" via="" tl="48" linkIndex="1" keepClear="false" contPos="-4.0"/>
+  <connection from="714" to="229" fromLane="1" toLane="1" via="2449_1" tl="50" linkIndex="6" shape="-423.5546,416.13 -431.69145000000003,411.46145 -439.84235,406.78499999999997" keepClear="false" contPos="-4.0"/>
+  <connection from="729" to="733" fromLane="0" toLane="0" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="720" to="2454" fromLane="1" toLane="1" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="455" to="1114" fromLane="0" toLane="0" via="2261_0" shape="-434.33389999999997,405.77265 -434.14964999999995,405.20124999999996 -433.86069999999995,404.7387 -433.46675,404.36025 -432.50710000000004,403.84345 -430.90864999999997,403.48235 -428.72155,403.4035 -425.45125,403.70939999999996 -424.5153,403.85315" keepClear="false" contPos="-4.0"/>
+  <connection from="87" to="1114" fromLane="1" toLane="0" via="1957_0" tl="49" linkIndex="2" shape="-439.7998,403.71465 -436.262,403.8144 -428.60685,403.52805 -425.54904999999997,403.70815 -424.5153,403.85315" keepClear="false" contPos="-4.0"/>
+  <connection from="84" to="87" fromLane="0" toLane="0" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="720" to="2454" fromLane="0" toLane="0" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="232" to="1366" fromLane="0" toLane="0" via="2098_0" tl="48" linkIndex="0" shape="-449.26945,405.57375 -450.36135,405.11699999999996 -451.65945,404.8542 -454.85884999999996,404.7781 -457.75785,404.70225 -459.5761,404.40729999999996 -460.65675,404.08415" keepClear="false" contPos="-4.0"/>
+  <connection from="446" to="454" fromLane="1" toLane="0" via="2254_0" tl="49" linkIndex="0" shape="-430.9541,398.01660000000004 -431.11485,399.5408 -430.9275,402.18615 -430.7337,404.83119999999997 -430.90585,406.44915000000003" keepClear="false" contPos="-4.0"/>
+  <connection from="2170" to="720" fromLane="0" toLane="0" via="" keepClear="false" contPos="-4.0"/>
+  <connection from="731" to="229" fromLane="0" toLane="0" via="2464_0" tl="50" linkIndex="0" shape="-439.59844999999996,419.5431 -439.15415,417.56435 -438.92870000000005,415.5557 -438.95195,414.1551 -439.20475,412.79094999999995 -439.4883,412.0156 -439.8877,411.31325000000004 -440.36535000000003,410.72505 -441.6038,409.80485" keepClear="false" contPos="-4.0"/>
+  <connection from="714" to="729" fromLane="0" toLane="0" via="2448_0" tl="50" linkIndex="4" shape="-425.3053,419.15975000000003 -427.0221,418.31225 -428.2306,417.93105 -429.49085,417.82775000000004 -430.1151,417.93025 -430.70615,418.15409999999997 -431.23815,418.49559999999997 -431.69345,418.9358 -432.36215000000004,420.01005 -432.82885,421.3183" keepClear="false" contPos="-4.0"/>
+  <connection from="714" to="455" fromLane="1" toLane="0" via="2446_0" tl="50" linkIndex="5" shape="-423.5546,416.13 -428.0988,413.2952 -431.11975,411.07225 -433.07545,409.24355 -434.034,407.9563 -434.42215,406.962 -434.43685,406.26945" keepClear="false" contPos="-4.0"/>
+</connections>
