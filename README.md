@@ -105,6 +105,8 @@ Coming soon.
 
 To add scenario to Chroma and the internal directory used for storing XML files and GIFs, use the add_scenarios.py script. Where it says db.save_folder(""), simply put in the absolute path to your folder of CommonRoad .xml files in the quotes. Then, run the script (in the chatbot venv).
 
+The code comes with an empty data base. To make the pre-created batch simulations possible, use [these scenarios] (https://drive.google.com/file/d/1KplwGZeh6XW3YnrK2Ch9136GDM5UDfe9/view?usp=share_link). Simply download them, unzip the file, and install them to the data base as described above.
+
 ---
 
 ## Adding LLMs
