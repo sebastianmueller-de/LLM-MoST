@@ -8,7 +8,7 @@ Code coming soon.
 2. Create a venv (will be referred to here as "chatbot venv") and activate it.
 3. Run:
    ```bash 
-   pip install -e requirements.txt
+   pip install -r requirements.txt
 
 ---
 
