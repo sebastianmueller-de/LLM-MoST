@@ -1,0 +1,22 @@
+cost_weights:
+
+    acceleration: 0.2
+    jerk: 0.2
+    lateral_jerk: 0.4
+    longitudinal_jerk: 0.4
+    orientation_offset: 0.0
+    path_length: 0.0
+
+    lane_center_offset: 1.0
+    velocity_offset: 0.3
+    velocity: 0.0
+    distance_to_reference_path: 5.0
+    distance_to_obstacles: 2.0
+
+    prediction: 0.5
+    responsibility: 0.5
+
+external_cost_weights:
+    occ_pm: 0.0 # Occlusion Phantom Module (phantom pedestrian harm)
+    occ_um: 0.0 # Occlusion Uncertainty Module (distance to uncertainty map)
+    occ_ve: 0.0 # Occlusion Visibility Estimator (lateral adaption to increase visible area)

@@ -1,0 +1,41 @@
+In this step, the user will specify the initial velocity of the ego car. You will either be provided with a range or an exact value, which you will have to extract. In case you are provided with an exact value, the output should look like this:
+
+{
+  "initial_velocity": [float]
+}
+
+Even though we have a specific float, it should still be formatted as a list in the JSON object. If the user provides a range instead, the output should look like this:
+
+{
+  "initial_velocity": [float_lower, float_higher]
+}
+
+float_lower describes the lower bound (inclusive) of the velocity interval, whereas float_higher specifies the upper bound (inclusive).
+
+In case the user does not provide you with a numerical value or a range of numbers, do not make any assumptions. Simply return an empty JSON object. The following list contains examples to aid you in your reasoning process:
+
+User input: The starting velocity of the ego vehicle should be exactly 11.99
+Output:
+{
+  "initial_velocity": [11.99]
+}
+Reasoning: The user clearly specified an exact value, which we then used.
+
+User input: In the beginning, the velocity is between 5 and 10.
+Output:
+{
+  "initial_velocity": [5, 10]
+}
+Reasoning: The user provided a range, which we simply used.
+
+User input: No need for a starting velocity
+Output:
+{
+}
+Reasoning: Nothing was specified, so we return an empty JSON object.
+
+User input: The starting velocity should be fast.
+Output:
+{
+}
+Reasoning: Even though the user gave a verbal description, he did not provide an exact value/interval. However, for specifying the initial velocity, we only accept numerical values/ranges and not pure verbal descriptions. We return an empty JSON object.

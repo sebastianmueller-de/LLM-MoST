@@ -1,0 +1,58 @@
+# Frenetix Motion Planner Requirements
+# Compatible with Python 3.10
+# Tested and working versions
+# Core dependencies
+numpy>=1.24.2,<2.0.0
+scipy>=1.9.3,<2.0.0
+matplotlib>=3.8.1,<3.9.0
+pandas>=2.0.3,<2.1.0
+shapely>=2.0.6,<3.0.0
+pygeos>=0.14,<0.15
+# CommonRoad dependencies
+commonroad-io>=2024.2,<2024.3
+commonroad-drivability-checker>=2024.1,<2024.2
+commonroad-route-planner>=2024.2.1,<2024.3.0
+commonroad-vehicle-models>=3.0.2,<4.0.0
+# Machine Learning dependencies
+torch>=2.2.1,<2.3.0
+scikit-learn>=1.0.0,<2.0.0
+onnxruntime>=1.18.1,<1.19.0
+# Other dependencies
+omegaconf>=2.1.1,<3.0.0
+psutil>=5.9.6
+methodtools>=0.4.7,<0.5.0
+imageio>=2.31.2,<3.0.0
+rich>=13.7.1,<14.0.0
+triangle>=20200424
+frenetix>=0.4.0
+wale-net>=3.0.3,<3.1.0
+# Additional dependencies that were installed
+rtree>=0.8.3
+networkx>=2.2
+tqdm>=4.64
+protobuf==3.20.2
+pillow>=10.4.0
+lxml>=4.2.2
+iso3166>=1.0.1
+fonttools>=4.22.0
+pyparsing>=2.3.1
+contourpy>=1.0.1
+packaging>=20.0
+kiwisolver>=1.3.1
+python-dateutil>=2.7
+cycler>=0.10
+wirerope>=0.4.7
+PyYAML>=5.1.0
+antlr4-python3-runtime==4.9.*
+sympy
+coloredlogs
+flatbuffers
+tzdata>=2022.1
+markdown-it-py>=2.2.0
+pygments>=2.13.0,<3.0.0
+typing-extensions>=4.0.0,<5.0
+# Development dependencies (for compilation)
+# python3.10-dev  # Install via apt: sudo apt-get install python3.10-dev
+# Optional: For GPU support (if compatible)
+# Note: Current PyTorch version may not support RTX 5090
+# Consider installing CPU-only version if GPU compatibility issues persist 

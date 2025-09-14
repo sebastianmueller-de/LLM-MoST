@@ -1,0 +1,32 @@
+Some of your returned answers were too restrictive. In this step, please relax the parameters of the obstacles. To aid your memory, the lists/JSON objects you have created before are included in the user's query as a single large JSON object. Make sure it aligns with the previous description of the scenario, but relax the parameters of the less important aspects. Change all the values of provided numerical ranges by at least 5 in one direction (preferably both), except if reducing the lower bound by 5 means removing a component, which should be present (removing a component is equivalent to setting its lower bound to 0). If a value is an exact value instead of a range, transform it into a range with the same alteration. Upper and lower bound should always be set in such a manner that the original exact value is included in the interval. If the user's description is not very adamant about the number of obstacles, feel free to use considerably larger ranges. For example, if the user simply said he would like there to be cars in the section on dynamic obstacles, you could set the range to [5, 50]. If there are values in the supplied JSON objects that were included by you based on loose assumptions/guesses you made, focus on these first and relax them generously (possibly even remove these restrictions based on your assumptions). However, make sure that there is always at least one element in the tags list. This is very important. Your output should be one large JSON object like the one you received with the updated parameters, but only contain the parameters you changed. It is essential that you do not return the categories you left unaltered. Also, do not add any elements not present in the received object. You may only change and remove already present instances. To aid you in making these changes, you are provided with the following examples:
+
+Scenario knowledge from the chat history: The user has described a busy intersection with about 10 cars.
+Original JSON object:
+{
+    "tags": ["intersection"],
+    "road_network": {"traffic_light": [1]},
+    "obstacles": {"car": [10]}
+}
+Output:
+{
+    "road_network": {},
+    "obstacles": {"car": [10, 30]},
+}
+Reasoning: From the past conversation we know that the user has described the intersection as busy. This means that we definitely want more cars than 10, since less can in no way be a busy intersection. So we extend the exact value to a reasonable range with an upper limit of 30. Also, the user did not explicitly describe any traffic lights. Therefore, we remove it from the road_network object and return an empty JSON, signifying that the user does not care. Lastly, we ignore the tags element in our output, since we did not change it.
+
+Scenario knowledge from the chat history: The ego vehicle is driving towards an intersection with many cars, where it turns left. The initial velocity is 11 m/s. Also, a traffic light would be nice.
+Original JSON object:
+{
+    "tags": ["intersection", "turn_left", "multi_lane"],
+    "road_network": {"traffic_light": [1]},
+    "obstacles": {"car": [25, 30]},
+    "initial_velocity": [11]
+}
+Output:
+{
+    "tags": ["intersection", "turn_left"],
+    "road_network": {},
+    "obstacles": {"car": [20, 60]},
+    "initial_velocity": [6, 16]
+}
+Reasoning: multi_lane is a tag which was not clearly specified by the user, therefore it is excluded. The same case holds for the traffic light in road_network. The obstacles were described as "many cars", so we can freely extend the range. Following our instructions from above, we decide to increase the range for the initial_velocity by 5 in each direction. We return a value for all the provided categories, since we made changes to each one.
