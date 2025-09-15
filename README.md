@@ -113,7 +113,7 @@ Coming soon.
 
 ## 🗄️ Building the Database
 
-To add scenarios to **Chroma** and the internal storage (for XML files and GIFs), use the `add_scenarios.py` script.
+To add scenarios to **Chroma** and the internal storage (for XML files and GIFs), use the `add_scenarios.py` script, with the **chatbot venv** active.
 
 * In the script, modify:
 
