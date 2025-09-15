@@ -5,7 +5,7 @@
 ## 📦 Installing the Overall Module
 
 1. Clone the Git repository.
-2. Create a virtual environment (referred to here as **chatbot venv**) and activate it.
+2. Create a virtual environment (referred to here as **chatbot venv**) and activate it (recommended python version 3.10).
 3. Install the requirements:
    ```bash
    pip install -r requirements.txt
