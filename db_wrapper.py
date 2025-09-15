@@ -3,6 +3,34 @@ from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunct
 from utils.xml_parsing_utils import *
 import os
 from pathlib import Path
+from multiprocessing import Pool
+
+# --- Helper for parallel workers for building DB ---
+def process_scenario(file_path_str: str):
+    """Processes a scenario file into metadata and content.
+    Returns None if an error occurred, else a tuple with (scenario_name, scenario_content, mapping).
+    """
+    scenario_content, scenario_name, tags, location = add_metadata_to_xml(file_path_str)
+
+    if scenario_content == "ERROR":
+        return None
+
+    mapping = tags | location | {"file_path": file_path_str}
+
+    # Prepare filesystem
+    file_name = Path(file_path_str).stem.removesuffix(".xml").removesuffix(".cr")
+    scenario_path = (Path("Scenarios") / file_name).resolve()
+
+    if not os.path.exists(scenario_path):
+        os.makedirs(scenario_path / "Original")
+        target_file_path = (scenario_path / "Original" / f"{file_name}.xml")
+        with target_file_path.open("w") as f:
+            f.write(scenario_content)
+    else:
+        print(f"Scenario {scenario_name} already in folder.")
+
+    return (scenario_name, scenario_content, mapping)
+
 
 class ScenarioDBWrapper:
     def __init__(self, persist_dir: str, embedding_function: str | None = None):
@@ -54,47 +82,36 @@ class ScenarioDBWrapper:
     # Store a single scenario to the DB
     # Adds a scenario to chroma, as well as to the folder directory
     def save_scenario(self, file_path_str: str) -> bool:
-        scenario_content, scenario_name, tags, location = add_metadata_to_xml(file_path_str)
+        result = process_scenario(file_path_str)
+        if result is None:
+            return False
 
-        # This means something went wrong while processing
-        if scenario_content == "ERROR": return False
-
-        # Store tags, location, and the file path as metadata for quick and easy access
-        mapping = tags | location | {"file_path": file_path_str}
+        scenario_name, scenario_content, mapping = result
         self.collection.add(ids=scenario_name,
                             documents=scenario_content,
                             metadatas=[mapping])
-
-        print("Successfully saved scenario {}".format(scenario_name))
-
-        file_name = Path(file_path_str).stem.removesuffix(".xml").removesuffix(".cr")
-
-        scenario_path = (Path("Scenarios") / file_name).resolve()
-
-        if not os.path.exists(scenario_path):
-            os.makedirs(scenario_path / "Original")
-            target_file_path = (scenario_path / "Original" / f"{file_name}.xml")
-            with target_file_path.open("w") as f:
-                # Nor sure if this modified file will work with CR --> seems to work just fine
-                f.write(scenario_content)
-        else:
-            print(f"Scenario {scenario_name} already in DB.")
-
+        print(f"Successfully saved scenario {scenario_name}")
         return True
 
-    # Just storage, but for whole folder of scenarios
-    def save_folder(self, folder_path_str: str):
+
+    def save_folder(self, folder_path_str: str, num_workers: int = 4):
         folder = Path(folder_path_str).resolve()
-        files = os.listdir(folder)
+        files = [str(folder / file) for file in os.listdir(folder)]
 
-        successfully_processed = 0
+        results = []
+        with Pool(processes=num_workers) as pool:
+            for result in pool.imap_unordered(process_scenario, files):
+                if result is not None:
+                    results.append(result)
 
-        for file in files:
-            full_path = folder / file
-            if self.save_scenario(str(full_path)):
-                successfully_processed += 1
+        # Unpack results for bulk insert
+        if results:
+            ids, documents, metadatas = zip(*results)
+            self.collection.add(ids=list(ids),
+                                documents=list(documents),
+                                metadatas=list(metadatas))
 
-        print(f"Successfully saved {successfully_processed} scenarios out of {len(files)}")
+        print(f"Successfully saved {len(results)} scenarios out of {len(files)}")
 
     # Find the file path of a scenario, given its id (which is the name of the xml file, including the ending)
     def get_file_path(self, id_:str) -> str:
@@ -240,8 +257,3 @@ class ScenarioDBWrapper:
                 filtered_documents.append(doc)
 
         return filtered_ids, filtered_documents
-
-
-# db = ScenarioDBWrapper("chroma")
-# db.save_scenario("/home/avsaw1/sebastian/BalancedDB/DEU_Lengede-12_1_T-2.xml")
-# db.save_folder("/home/avsaw1/sebastian/BalancedDB3")

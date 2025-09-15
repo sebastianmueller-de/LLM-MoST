@@ -1,0 +1,9 @@
+venv
+.env
+__pycache__
+chroma
+chroma/*
+Frenetix-Motion-Planner
+Frenetix-Motion-Planner/venv
+Scenarios
+Scenarios/*
