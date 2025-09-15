@@ -126,7 +126,7 @@ To add scenarios to **Chroma** and the internal storage (for XML files and GIFs)
 * Run the script in the **chatbot venv**.
 
 ⚠️ Note: The repository includes an **empty database**.
-To enable pre-created batch simulations, download [these scenarios](https://drive.google.com/file/d/1KplwGZeh6XW3YnrK2Ch9136GDM5UDfe9/view?usp=share_link), unzip the file, and add them to the database as described above.
+To enable pre-created batch simulations, use the supplied CollectedScenarios folder, or download [these scenarios](https://drive.google.com/file/d/1KplwGZeh6XW3YnrK2Ch9136GDM5UDfe9/view?usp=share_link), unzip the file, and add them to the database as described above.
 
 ---
 
