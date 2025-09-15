@@ -1,7 +1,4 @@
-````markdown
 # 🚗 LLM-MoST
-
-Code coming soon.
 
 ---
 
@@ -12,8 +9,8 @@ Code coming soon.
 3. Install the requirements:
    ```bash
    pip install -r requirements.txt
-````
-
+   ```
+   
 ---
 
 ## 🔧 Installing Necessary Submodules
@@ -165,5 +162,3 @@ DEFAULT_MODE=commercial
    python interface.py
    ```
 
-```
-```
