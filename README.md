@@ -1,45 +1,53 @@
-# LLM-MoST
+````markdown
+# 🚗 LLM-MoST
+
 Code coming soon.
 
 ---
 
-## Installing the Overall Module
+## 📦 Installing the Overall Module
+
 1. Clone the Git repository.
-2. Create a venv (will be referred to here as "chatbot venv") and activate it.
-3. Run:
-   ```bash 
+2. Create a virtual environment (referred to here as **chatbot venv**) and activate it.
+3. Install the requirements:
+   ```bash
    pip install -r requirements.txt
+````
 
 ---
 
-## Installing Necessary Submodules
+## 🔧 Installing Necessary Submodules
 
-For certain steps of the process, other submodules from the **CommonRoad framework** are required.
-Due to package conflicts—both in required version imports and in slightly differing script implementations—these submodules must be executed in their own virtual environments, and are called as subprocesses.
+Some steps require additional submodules from the **CommonRoad framework**.
+Due to package conflicts—both in version requirements and script implementations—these submodules must be installed in **separate virtual environments** and executed as subprocesses.
 
-This section lists the necessary steps to install the required environments.
+The following sections describe how to set up each required environment.
 
 ---
 
-### 1. SUMO Conversion Package
+### 1️⃣ SUMO Conversion Package
 
 * Follow the instructions from the [CommonRoad Interactive Scenarios repository](https://gitlab.lrz.de/tum-cps/commonroad-interactive-scenarios) to install the SUMO conversion conda environment.
-* The environment must be named **exactly** as in the instructions (`cr37`), since it will be called by name when a required subprocess is started.
-* The storage location of the environment and files is irrelevant. What matters is that the **LLM-MoST** program can access it via a command like:
+* The environment must be named **exactly** as in the instructions (`cr37`), since it will be called by name when subprocesses are started.
+* The location of the environment/files is irrelevant. What matters is that **LLM-MoST** can access it with a command like:
 
   ```bash
   conda run -n cr37 python <script_name> <--optional_inputs>
   ```
 
-After that, a small patch needs to be implemented. A file in the installed conda package needs to be changed. It is located at 
+#### 🔧 Patch Required
+
+After installation, a small patch must be applied to the installed package.
+
+Locate the file at:
 
 ```bash
 $CONDA_PREFIX/lib/pythonX.Y/site-packages/sumocr/interface/id_mapper.py
 ```
 
-(where $CONDA_PREFIX points to the active Conda environment, and X.Y depends on your Python version, e.g. 3.7).
+(where `$CONDA_PREFIX` points to the active conda environment, and `X.Y` corresponds to your Python version, e.g. 3.7).
 
-To fix it, run:
+Apply the patch:
 
 ```bash
 conda activate cr37
@@ -49,13 +57,13 @@ patch -p1 < /absolute/path/to/LLM-MoST/id_mapper_patch.diff
 
 ---
 
-### 2. Frenetix Motion Planner & Visualization Package
+### 2️⃣ Frenetix Motion Planner & Visualization Package
 
 *(Required for base functionality, even if the motion planner is not used for evaluation.)*
 
-#### Dependencies
+#### 📋 Dependencies
 
-Ensure the following dependencies are installed on your system for the C++ implementation:
+Ensure the following are installed for the C++ implementation:
 
 * **Eigen3**
 
@@ -79,15 +87,19 @@ Ensure the following dependencies are installed on your system for the C++ imple
   sudo apt-get install python3.11-dev
   ```
 
-#### Installation Steps
+#### ⚙️ Installation Steps
 
-1. Navigate to the `LLM-MoST/Frenetix-Motion-Planner` directory.
-2. Create a virtual environment:
+1. Navigate to:
+
+   ```bash
+   cd LLM-MoST/Frenetix-Motion-Planner
+   ```
+2. Create a Python 3.11 virtual environment:
 
    ```bash
    python3.11 -m venv venv
    ```
-3. Activate and install the package:
+3. Activate the environment and install:
 
    ```bash
    source venv/bin/activate
@@ -96,34 +108,62 @@ Ensure the following dependencies are installed on your system for the C++ imple
 
 ---
 
-### 3. RBFN-Motion-Primitives
-Coming soon. 
+### 3️⃣ RBFN-Motion-Primitives
+
+Coming soon.
 
 ---
 
-## Building the Data Base
+## 🗄️ Building the Database
 
-To add scenario to Chroma and the internal directory used for storing XML files and GIFs, use the add_scenarios.py script. Where it says db.save_folder(""), simply put in the absolute path to your folder of CommonRoad .xml files in the quotes. Then, run the script (in the chatbot venv).
+To add scenarios to **Chroma** and the internal storage (for XML files and GIFs), use the `add_scenarios.py` script.
 
-The code comes with an empty data base. To make the pre-created batch simulations possible, use [these scenarios] (https://drive.google.com/file/d/1KplwGZeh6XW3YnrK2Ch9136GDM5UDfe9/view?usp=share_link). Simply download them, unzip the file, and install them to the data base as described above.
+* In the script, modify:
+
+  ```python
+  db.save_folder("")
+  ```
+
+  by inserting the absolute path to your folder of CommonRoad `.xml` files.
+
+* Run the script in the **chatbot venv**.
+
+⚠️ Note: The repository includes an **empty database**.
+To enable pre-created batch simulations, download [these scenarios](https://drive.google.com/file/d/1KplwGZeh6XW3YnrK2Ch9136GDM5UDfe9/view?usp=share_link), unzip the file, and add them to the database as described above.
 
 ---
 
-## Adding LLMs
+## 🤖 Adding LLMs
 
-Use a .env file of the following style:
+Configure your API keys and models in a `.env` file:
 
+```env
 DEFAULT_API_KEY=
 
 DEFAULT_API_MODEL=gemini-2.5-flash
-
 
 DEFAULT_OLLAMA_MODEL=qwen3:30b
 
 DEFAULT_OLLAMA_URL=
 
-
 DEFAULT_MODE=commercial
+```
 
-## Starting the program
-To start the program, activate the chatbot venv, navigate to the LLM-MoST/ directory, and run "python interface.py"
+---
+
+## ▶️ Starting the Program
+
+1. Activate the **chatbot venv**.
+2. Navigate to the project root:
+
+   ```bash
+   cd LLM-MoST/
+   ```
+3. Run the interface:
+
+   ```bash
+   python interface.py
+   ```
+
+```
+```
