@@ -116,6 +116,14 @@ Ensure the following are installed for the C++ implementation:
    pip install .
    ```
 
+Note that the motion planner uses torch. This means that the version of torch compatible with your hardware needs to be installed. In case the standard installation causes problems, proceed as follows:
+
+   ```bash
+   pip uninstall torch
+   pip install <fitting_torch_version>
+   ```
+
+
 ---
 
 ### 3️⃣ RBFN-Motion-Primitives
