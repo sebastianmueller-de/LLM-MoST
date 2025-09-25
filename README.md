@@ -24,7 +24,7 @@ The following sections describe how to set up each required environment.
 
 ### 1️⃣ SUMO Conversion Package
 
-* Follow the instructions from the [CommonRoad Interactive Scenarios repository](https://gitlab.lrz.de/tum-cps/commonroad-interactive-scenarios) to install the SUMO conversion conda environment. However, instead of using python version 3.7 in step 1, use version 3.10 to create the conda environment.
+* Follow the instructions from the [CommonRoad Interactive Scenarios repository](https://gitlab.lrz.de/tum-cps/commonroad-interactive-scenarios) to install the SUMO conversion conda environment. However, instead of using python version 3.7 in step 1, use version 3.10 to create the conda environment. The actual git repository is not neede, but it contains the install script needed for installing all relevant packages into the conda environment.
 * The environment must be named **exactly** as in the instructions (`cr37`), since it will be called by name when subprocesses are started.
 * The location of the environment/files is irrelevant. What matters is that **LLM-MoST** can access it with a command like:
 
