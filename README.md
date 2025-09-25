@@ -1,5 +1,7 @@
 # 🚗 LLM-MoST
 
+This README, as well as the repository, are preliminary and under maintenance. Installation may not work yet.
+
 ---
 
 ## 📦 Installing the Overall Module
@@ -59,6 +61,9 @@ To make sure the project can access the environment, create a .env file with the
    CONDA_BIN=/home/username/miniconda3/bin/conda
 ```
 Or using the equivalent path to the conda executable you are using.
+
+### Install the crdesigner
+Use pip install commonroad-scenario-designer in the activated environment.
 
 ---
 
