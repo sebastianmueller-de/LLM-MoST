@@ -39,7 +39,7 @@ After installation, a small patch must be applied to the installed package.
 Locate the file at:
 
 ```bash
-$CONDA_PREFIX/lib/pythonX.Y/site-packages/sumocr/interface/id_mapper.py
+$CONDA_PREFIX/envs/cr37/lib/python3.10/site-packages/sumocr/interface/id_mapper.py
 ```
 
 (where `$CONDA_PREFIX` points to the active conda environment, and `X.Y` corresponds to your Python version, e.g. 3.7).
@@ -48,7 +48,7 @@ Apply the patch:
 
 ```bash
 conda activate cr37
-cd $CONDA_PREFIX/lib/pythonX.Y/site-packages/sumocr/interface
+cd $CONDA_PREFIX/envs/cr37/lib/python3.10/site-packages/sumocr/interface
 patch -p1 < /absolute/path/to/LLM-MoST/id_mapper_patch.diff
 ```
 
