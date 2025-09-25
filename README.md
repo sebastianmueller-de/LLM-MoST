@@ -52,6 +52,14 @@ cd $CONDA_PREFIX/envs/cr37/lib/python3.10/site-packages/sumocr/interface
 patch -p1 < /absolute/path/to/LLM-MoST/id_mapper_patch.diff
 ```
 
+### Create .env file
+To make sure the project can access the environment, create a .env file with the following line of code in it:
+
+```env
+   CONDA_BIN=/home/username/miniconda3/bin/conda
+```
+Or using the equivalent path to the conda executable you are using.
+
 ---
 
 ### 2️⃣ Frenetix Motion Planner & Visualization Package
