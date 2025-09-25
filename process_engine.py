@@ -16,6 +16,13 @@ from utils.data_utils import make_combined_bar_plot, make_batch_summary_string
 
 import subprocess
 
+from dotenv import load_dotenv
+import os, subprocess
+
+load_dotenv()
+
+conda_bin = os.getenv("CONDA_BIN", "conda")
+
 # Class running the search loop in an extra thread
 class ProcessEngine:
     def __init__(self):
@@ -312,7 +319,7 @@ class ProcessEngine:
                 self.debug_log += f"\nCould not find image. Rendering started.\n###################"
                 proc = subprocess.Popen(
                     [
-                        "conda", "run", "-n", "cr37",
+                        conda_bin, "run", "-n", "cr37",
                         "python", "commonroad_interface/create_png_subprocess.py",
                         "--input-file", f"Scenarios/{new_name}/Original/{result}",
                         "--target-name", new_name,
@@ -362,7 +369,7 @@ class ProcessEngine:
                     self.debug_log += f"\nCould not find image. Rendering started.\n###################"
                     proc = subprocess.Popen(
                         [
-                            "conda", "run", "-n", "cr37",
+                            conda_bin, "run", "-n", "cr37",
                             "python", "commonroad_interface/create_png_subprocess.py",
                             "--input-file", f"Scenarios/{new_name}/Original/{result}",
                             "--target-name", new_name,
@@ -563,7 +570,7 @@ class ProcessEngine:
             try:
                 proc = subprocess.Popen(
                     [
-                        "conda", "run", "-n", "cr37",
+                        conda_bin, "run", "-n", "cr37",
                         "python", "commonroad_interface/convert_to_sumo_subprocess.py",
                         "--input-file", f"{full_path}/{scenario_pre}.xml",
                         "--target-name", scenario_pre,
@@ -618,7 +625,7 @@ class ProcessEngine:
         try:
             proc = subprocess.Popen(
                 [
-                    "conda", "run", "-n", "cr37",
+                    conda_bin, "run", "-n", "cr37",
                     "python", "commonroad_interface/convert_to_sumo_subprocess.py",
                     "--input-file", f"{used_base_config}.xml",
                     "--target-name", scenario_post,
@@ -674,7 +681,7 @@ class ProcessEngine:
         try:
             proc = subprocess.Popen(
                 [
-                    "conda", "run", "-n", "cr37",
+                    conda_bin, "run", "-n", "cr37",
                     "python", "commonroad_interface/simulate_sumo_subprocess.py",
                     "--folder_path", str(folder_path),
                 ],
@@ -1157,20 +1164,5 @@ class ProcessEngine:
         self.running = True
         self.thread = threading.Thread(target=self._run, daemon=True)
         self.thread.start()
-
-#engine = ProcessEngine()
-# print(engine.select_initial_gif("/home/avsaw1/sebastian/ChaBot7/Scenarios/ZAM_Tjunction-1_321_T-1/ZAM_Tjunction-1_321_T-1.png"))
-# print(engine._handle_modification("Car 349 should move to 21933", "/home/avsaw1/sebastian/ChaBot7/Scenarios/ZAM_Tjunction-1_321_T-1/Modified/ZAM_Tjunction-1_321_T-1_M6838/ZAM_Tjunction-1_321_T-1_M6838.gif"))
-#engine.run_with_frenetix(["/home/avsaw1/sebastian/ChaBot7/Scenarios/ZAM_Tjunction-1_207_T-1/Original/ZAM_Tjunction-1_207_T-1.gif"], 0)
-#print(engine.simulations)
-#engine.run_with_frenetix(["/home/avsaw1/sebastian/ChaBot7/Scenarios/ZAM_Tjunction-1_147_T-1/Modified/ZAM_Tjunction-1_147_T-1_BP4860/ZAM_Tjunction-1_147_T-1_BP4860.xml"], 0)
-#print(engine.simulations)
-# print(engine._handle_cost_param_change("make all parameters 1.0"))
-
-#print(engine.react_to_request("Please remove all vehicles but one from the simulation.", ["/home/avsaw1/sebastian/ChaBot7/Scenarios/ZAM_Zip-1_32_T-1/Modified/ZAM_Zip-1_32_T-1_B8503/ZAM_Zip-1_32_T-1_B8503.gif"], 0))
-#print(engine.react_to_request("Set all motion planner parameters to 1.0", ["/home/avsaw1/sebastian/ChaBot7/Scenarios/ZAM_Zip-1_32_T-1/Modified/ZAM_Zip-1_32_T-1_B8503/ZAM_Zip-1_32_T-1_B8503.gif"], 0))
-#print(engine.react_to_request("Add a vehicle to lane 24.", ["/home/avsaw1/sebastian/ChaBot7/Scenarios/ZAM_Zip-1_32_T-1/Modified/ZAM_Zip-1_32_T-1_B8503/ZAM_Zip-1_32_T-1_B8503.gif"], 0)
-
-# engine._handle_traffic_light_modification("Add a traffic light to 50201", "/home/avsaw1/sebastian/ChaBot7/Scenarios/ZAM_Tjunction-1_147_T-1/Original/ZAM_Tjunction-1_147_T-1.gif")
 
 # engine.run_with_planner(["/home/avsaw1/sebastian/ChaBot7/Scenarios/GRC_NeaSmyrni-98_1_T-9/Original/GRC_NeaSmyrni-98_1_T-9.gif"], 0)
