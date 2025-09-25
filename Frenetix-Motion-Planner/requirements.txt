@@ -14,7 +14,7 @@ commonroad-drivability-checker>=2024.1,<2024.2
 commonroad-route-planner>=2024.2.1,<2024.3.0
 commonroad-vehicle-models>=3.0.2,<4.0.0
 # Machine Learning dependencies
-torch>=2.2.1,<2.3.0
+torch>=2.2.1
 scikit-learn>=1.0.0,<2.0.0
 onnxruntime>=1.18.1,<1.19.0
 # Other dependencies
