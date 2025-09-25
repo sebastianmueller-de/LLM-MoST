@@ -130,10 +130,10 @@ def main():
     # **********************************************************************
     # Use batch structure (Scenarios_batch)
     # You can change this path to wherever your Scenarios_batch folder is located
-    scenario_folder = "/home/avsaw1/sebastian/ChaBot7/Scenarios"  # Absolute path to your scenarios
+    # scenario_folder = "/home/avsaw1/sebastian/ChaBot7/Scenarios"  # Absolute path to your scenarios
     
     # Alternative: If you want to keep it relative to the script location, uncomment this line:
-    # scenario_folder = os.path.join(mod_path, "Scenarios_batch")
+    scenario_folder = str(Path(mod_path).parent / "Scenarios")
     
     # Use specific scenario list from CSV file
     use_specific_scenario_list = batch
