@@ -63,7 +63,7 @@ To make sure the project can access the environment, create a .env file with the
 Or using the equivalent path to the conda executable you are using.
 
 ### Install the crdesigner
-Use pip install commonroad-scenario-designer in the activated environment.
+Use pip install commonroad-scenario-designer in the activated environment. Set routes_from_trajectories to True.
 
 ---
 
