@@ -54,6 +54,14 @@ cd $CONDA_PREFIX/envs/cr37/lib/python3.10/site-packages/sumocr/interface
 patch -p1 < /absolute/path/to/LLM-MoST/id_mapper_patch.diff
 ```
 
+Then apply another patch under $CONDA_PREFIX/envs/cr37/lib/python3.10/site-packages/crdesigner/sumo_map/cr2sumo/converter.py:
+
+```bash
+conda activate cr37
+cd $CONDA_PREFIX/envs/cr37/lib/python3.10/site-packages/crdesigner/sumo_map/cr2sumo/
+patch -p1 < /absolute/path/to/LLM-MoST/converter_patch.diff
+```
+
 ### Create .env file
 To make sure the project can access the environment, create a .env file with the following line of code in it:
 
