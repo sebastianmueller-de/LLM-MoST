@@ -1,5 +1,6 @@
 gradio
 chromadb
+commonroad-scenario-designer
 shapely
 langchain-core
 langchain-ollama
