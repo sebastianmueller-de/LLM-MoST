@@ -34,6 +34,9 @@ The following sections describe how to set up each required environment.
   conda run -n cr37 python <script_name> <--optional_inputs>
   ```
 
+### Install the crdesigner
+Use pip install commonroad-scenario-designer in the activated environment. Set routes_from_trajectories to True.
+
 #### 🔧 Patch Required
 
 After installation, a small patch must be applied to the installed package.
@@ -69,9 +72,6 @@ To make sure the project can access the environment, create a .env file with the
    CONDA_BIN=/home/username/miniconda3/bin/conda
 ```
 Or using the equivalent path to the conda executable you are using.
-
-### Install the crdesigner
-Use pip install commonroad-scenario-designer in the activated environment. Set routes_from_trajectories to True.
 
 ---
 
