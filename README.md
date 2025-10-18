@@ -57,11 +57,11 @@ cd $CONDA_PREFIX/envs/cr37/lib/python3.10/site-packages/sumocr/interface
 patch -p1 < /absolute/path/to/LLM-MoST/id_mapper_patch.diff
 ```
 
-Then apply another patch under $CONDA_PREFIX/envs/cr37/lib/python3.10/site-packages/crdesigner/sumo_map/cr2sumo/converter.py:
+Then apply another patch under $CONDA_PREFIX/envs/cr37/lib/python3.10/site-packages/crdesigner/map_conversion/sumo_map/cr2sumo:
 
 ```bash
 conda activate cr37
-cd $CONDA_PREFIX/envs/cr37/lib/python3.10/site-packages/crdesigner/sumo_map/cr2sumo/
+cd $CONDA_PREFIX/envs/cr37/lib/python3.10/site-packages/crdesigner/map_conversion/sumo_map/cr2sumo:
 patch -p1 < /absolute/path/to/LLM-MoST/converter_patch.diff
 ```
 
