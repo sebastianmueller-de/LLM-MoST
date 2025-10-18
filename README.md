@@ -34,8 +34,8 @@ The following sections describe how to set up each required environment.
   conda run -n cr37 python <script_name> <--optional_inputs>
   ```
 
-### Install the crdesigner
-Use pip install commonroad-scenario-designer in the activated environment. Set routes_from_trajectories to True.
+### Install the rest of commonroad functionality
+Use pip install commonroad-all in the activated environment.
 
 #### 🔧 Patch Required
 
@@ -57,13 +57,15 @@ cd $CONDA_PREFIX/envs/cr37/lib/python3.10/site-packages/sumocr/interface
 patch -p1 < /absolute/path/to/LLM-MoST/id_mapper_patch.diff
 ```
 
-Then apply another patch under $CONDA_PREFIX/envs/cr37/lib/python3.10/site-packages/crdesigner/map_conversion/sumo_map/cr2sumo:
+Then apply another patch under $CONDA_PREFIX/envs/cr37/lib/python3.10/site-packages/crdesigner/map_conversion/sumo_map/cr2sumo/converter.py:
 
 ```bash
 conda activate cr37
 cd $CONDA_PREFIX/envs/cr37/lib/python3.10/site-packages/crdesigner/map_conversion/sumo_map/cr2sumo:
 patch -p1 < /absolute/path/to/LLM-MoST/converter_patch.diff
 ```
+
+Alternatively, you can manually set the traffic_from_trajectories parameter in the create_sumo_files() function to True (in the converter.py file).
 
 ### Create .env file
 To make sure the project can access the environment, create a .env file with the following line of code in it:
